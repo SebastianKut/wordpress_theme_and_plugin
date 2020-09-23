@@ -1,0 +1,1 @@
+This is a first custom theme and plugin developed from Bootstrap template
