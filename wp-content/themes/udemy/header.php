@@ -7,7 +7,9 @@
 
   <!-- Stylesheets
     ============================================= -->
-    <?php wp_head(); ?>
+    <?php wp_head(); //this function tells wordpress where to enque style sheets
+    
+    ?>  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Document Title

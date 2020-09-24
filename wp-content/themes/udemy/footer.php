@@ -48,7 +48,10 @@
 
   <!-- External JavaScripts
   ============================================= -->
-  <?php wp_footer(); ?>
+  <?php wp_footer(); 
+  //this function tell wprdpress where to enque the scripts
+  
+  ?>
 
 </body>
 
