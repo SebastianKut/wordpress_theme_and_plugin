@@ -24,3 +24,7 @@
 
 /* CSS WIDGETS */
 #wp-calendar{ width: 100%; }
+
+#page-title span {
+    display: inline;
+}
