@@ -12,10 +12,6 @@
     ?>  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Document Title
-	============================================= -->
-  <title>Index Template</title>
-
 </head>
 
 <!--body class function adds some usefull wordpress classes as well as we can add our own-->
@@ -35,11 +31,18 @@
           <!-- Top Links
           ============================================= -->
           <div class="top-links">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
+          <?php
+           if( has_nav_menu( 'secondary' ) ){
+              wp_nav_menu([
+                'theme_location'      =>  'secondary',    //pass menu location(special id)
+                'container'           =>  false,           //if we wanna add nav or div tag to our menu
+                'fallback_cb'         =>  false,          //allows you to display default fallback menu
+                'depth'               =>  1               //how many sub menu items user is allow to have
+              ]);
+           };
+           ?>
+
+
           </div><!-- .top-links end -->
 
         </div>
@@ -93,11 +96,29 @@
         <!-- Logo
         ============================================= -->
         <div id="logo">
-          <a href="#" class="standard-logo">Udemy</a>
+
+        <?php 
+        if ( has_custom_logo() ){
+          the_custom_logo();
+        }else{
+              ?>
+
+          <a href="<?php echo home_url( '/' ); ?>" class="standard-logo"><?php bloginfo( 'name' ); ?></a> 
+
+          <?php
+        }
+        
+        ?>
+
+          
         </div><!-- #logo end -->
 
         <div class="top-advert">
-          <img src="images/magazine/ad.jpg">
+         
+        <?php if (function_exists('quads_ad'))
+            echo quads_ad( array('location' => 'udemy_header') );
+       ?> 
+
         </div>
 
       </div>
