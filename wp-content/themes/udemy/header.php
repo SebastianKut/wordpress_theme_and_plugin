@@ -188,6 +188,11 @@
            };
            ?>
 
+
+            <?php
+
+            if( get_theme_mod( 'ju_header_show_cart' ) ){ ?>
+
             <!-- Top Cart
             ============================================= -->
             <div id="top-cart">
@@ -227,17 +232,30 @@
               </div>
             </div><!-- #top-cart end -->
 
+              <?php
+            };
+
+            if( get_theme_mod( 'ju_header_show_search' ) ){ ?>
+
             <!-- Top Search
             ============================================= -->
             <div id="top-search">
               <a href="#" id="top-search-trigger">
                 <i class="icon-search3"></i><i class="icon-line-cross"></i>
               </a>
-              <form action="#" method="get">
-                <input type="text" name="q" class="form-control" placeholder="Type &amp; Hit Enter.." value="">
+              <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+                <input type="text" name="q" class="form-control" placeholder="<?php _e( 'Type &amp; Hit Enter..', 'udemy' ); ?>" value="<?php the_search_query(); ?>">
               </form>
             </div><!-- #top-search end -->
 
+
+
+            <?php
+          };
+
+          ?>
+
+           
           </div>
 
         </nav><!-- #primary-menu end -->

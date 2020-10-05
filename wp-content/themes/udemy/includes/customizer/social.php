@@ -24,9 +24,10 @@
 
     //section is a section in the customiser
         $wp_customize->add_section( 'ju_social_section', [
-            'title'         => __( 'Udemy Social Settings', 'udemy' ),
-            'priority'      => 30 //the lower number the higher placement
-        ]); 
+            'title'         =>  __( 'Udemy Social Settings', 'udemy' ),
+            'priority'      =>  30, //the lower number the higher placement
+            'panel'         =>  'udemy'
+            ]); 
 
 
 // controler takes care of updating value (setting in the database)
